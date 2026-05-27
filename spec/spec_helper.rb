@@ -121,7 +121,7 @@ RSpec.configure do |config|
     clear_performed_jobs
 
     Gush.configure do |c|
-      c.redis_url        = REDIS_URL
+      c.redis            = { url: REDIS_URL }
       c.gushfile         = GUSHFILE
       c.locking_duration = defined?(locking_duration) ? locking_duration : 2
       c.polling_interval = defined?(polling_interval) ? polling_interval : 0.3
